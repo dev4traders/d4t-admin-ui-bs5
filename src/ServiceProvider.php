@@ -2,36 +2,32 @@
 
 namespace D4T\Admin\UI\BS5;
 
-use D4T\Admin\UI\BS5\SneatSetting;
+use Dcat\Admin\Admin;
+use D4T\Admin\UI\BS5\Setting;
 use Dcat\Admin\Enums\ExtensionType;
-use Dcat\Admin\Extend\ServiceProvider;
+use Dcat\Admin\Extend\ServiceProvider as ServiceProviderBase;
 
-class ServiceProvider extends ServiceProvider
+class ServiceProvider extends ServiceProviderBase
 {
-
     public function getExtensionType(): ExtensionType
     {
         return ExtensionType::UI;
     }
 
 	protected $js = [
-	    // 'lib/codemirror.js',
-		// 'mode/css/css.js',
-		// 'mode/php/php.js'
+	    'js/ui-bs5.js',
     ];
 	protected $css = [
-		// 'lib/codemirror.css',
+		'css/ui-bs5.css',
 	];
-
-    protected $middleware = [
-        // 'middle' => [
-        //     SneatUIMiddleware::class,
-        // ],
-    ];
 
 	public function init()
 	{
         parent::init();
+
+        Admin::requireAssets('@dev4traders.d4t-admin-ui-bs5');
+
+        $this->publishable();
 	}
 
     public function settingForm()
