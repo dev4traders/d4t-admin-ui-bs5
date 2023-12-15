@@ -1,0 +1,31 @@
+{
+    "name": "dev4traders/d4t-admin-ui-bs5",
+    "alias": "BS5",
+    "description": "d4t ui sneat",
+    "type": "library",
+    "keywords": ["d4t", "ui", "bs5"],
+    "homepage": "https://github.com/dev4traders/d4t-admin-ui-bs5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mikha-dev",
+            "email": "mikha.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "D4T\\Admin\\UI\\BS5\\": "src/"
+        }
+    },
+    "extra": {
+        "dcat-admin": "D4T\\Admin\\UI\\BS5\\ServiceProvider",
+        "laravel": {
+            "providers": [
+                "D4T\\Admin\\UI\\BS5\\ServiceProvider"
+            ]
+        }
+    }
+}
