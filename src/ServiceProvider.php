@@ -15,10 +15,11 @@ class ServiceProvider extends ServiceProviderBase
     }
 
 	protected $js = [
-	    'js/ui-bs5.js',
+        'js/ui-bs5.js',
     ];
+
 	protected $css = [
-		'css/ui-bs5.css',
+		'css/ui-bs5.css'
 	];
 
 	public function init()
