@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'title' => 'Operation Log',
-    'setting_title' => 'Operation Log',
+    'title' => 'UI Boostrap5',
+    'setting_title' => 'UI Boostrap5',
 ];
