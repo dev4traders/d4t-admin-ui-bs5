@@ -15,9 +15,10 @@ class ServiceProvider extends ServiceProviderBase
 
     public static function loginBgImage(): string
     {
-        $url = self::setting(self::LOGIN_BG_IMAGE) ?? '/images/login-bg.png';
+        if( !empty(self::setting(self::LOGIN_BG_IMAGE)) )
+            return Storage::disk(config('admin.upload.disk'))->url(self::setting(self::LOGIN_BG_IMAGE));
 
-        return Storage::disk(config('admin.upload.disk'))->url($url);
+        return admin_asset('@dev4traders.d4t-admin-ui-bs5.path/images/logo.png');
     }
 
     public function getExtensionType(): ExtensionType
@@ -42,7 +43,7 @@ class ServiceProvider extends ServiceProviderBase
         $this->publishable();
 
 
-        //dd(self::loginBgImage());
+//        dd(self::loginBgImage());
         //dd(admin_asset('@dev4traders.d4t-admin-ui-bs5.path/images/logo.png'));
     }
 
